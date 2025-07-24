@@ -13,16 +13,34 @@ document.addEventListener('DOMContentLoaded', function() {
         rowHeaders: true,
         colHeaders: true,
         height: '300px',
+        minRows: 5,
+        minCols: 2,
+        minSpareRows: 1,
+        contextMenu: true,
         licenseKey: 'non-commercial-and-evaluation'
     });
 
-    // Add row and column buttons functionality
+    // Add row button functionality
     document.getElementById('addRow').addEventListener('click', function() {
-        hot.alter('insert_row');
+        const currentData = hot.getData();
+        const newRowIndex = currentData.length;
+        hot.alter('insert_row', newRowIndex);
+        hot.render(); // Force re-render
     });
 
+    // Add column button functionality
     document.getElementById('addColumn').addEventListener('click', function() {
-        hot.alter('insert_col');
+        const currentData = hot.getData();
+        const newColIndex = currentData[0].length;
+        hot.alter('insert_col', newColIndex);
+        hot.render(); // Force re-render
+        
+        // Update column headers
+        const headers = Array.from({length: hot.countCols()}, (_, i) => 
+            String.fromCharCode(65 + i)); // A, B, C, etc.
+        hot.updateSettings({
+            colHeaders: headers
+        });
     });
 
     // Initialize the chart
