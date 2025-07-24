@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regression Model Visualization</title>
+    <link href="https://cdn.jsdelivr.net/npm/handsontable/dist/handsontable.full.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/handsontable/dist/handsontable.full.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/regression@2.0.1/dist/regression.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Regression Model Visualization</h1>
+        
+        <div class="visualization">
+            <canvas id="regressionChart"></canvas>
+        </div>
+        
+        <div class="spreadsheet">
+            <div id="dataGrid"></div>
+            <button id="calculateRegression">Calculate Regression</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

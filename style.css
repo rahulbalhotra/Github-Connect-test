@@ -1,0 +1,46 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.visualization {
+    margin-bottom: 30px;
+    height: 400px;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.spreadsheet {
+    margin-top: 20px;
+}
+
+#dataGrid {
+    height: 300px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#calculateRegression {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#calculateRegression:hover {
+    background-color: #45a049;
+}
