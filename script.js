@@ -16,6 +16,15 @@ document.addEventListener('DOMContentLoaded', function() {
         licenseKey: 'non-commercial-and-evaluation'
     });
 
+    // Add row and column buttons functionality
+    document.getElementById('addRow').addEventListener('click', function() {
+        hot.alter('insert_row');
+    });
+
+    document.getElementById('addColumn').addEventListener('click', function() {
+        hot.alter('insert_col');
+    });
+
     // Initialize the chart
     const ctx = document.getElementById('regressionChart').getContext('2d');
     let chart = new Chart(ctx, {
@@ -80,11 +89,18 @@ document.addEventListener('DOMContentLoaded', function() {
             { x: maxX, y: result.predict(maxX)[1] }
         ];
 
+        // Update chart title to show regression equation
+        const equation = `y = ${result.equation[0].toFixed(2)}x + ${result.equation[1].toFixed(2)}`;
+        chart.options.plugins.title = {
+            display: true,
+            text: `Regression Equation: ${equation} (R² = ${result.r2.toFixed(4)})`,
+            padding: {
+                top: 10,
+                bottom: 30
+            }
+        };
+
         // Update chart
         chart.update();
-
-        // Display regression equation
-        const equation = `y = ${result.equation[0].toFixed(2)}x + ${result.equation[1].toFixed(2)}`;
-        alert(`Regression equation: ${equation}\nR² = ${result.r2.toFixed(4)}`);
     });
 });

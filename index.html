@@ -14,13 +14,19 @@
     <div class="container">
         <h1>Regression Model Visualization</h1>
         
-        <div class="visualization">
-            <canvas id="regressionChart"></canvas>
+        <div class="visualization-container">
+            <div class="visualization">
+                <canvas id="regressionChart"></canvas>
+            </div>
+            <button id="calculateRegression">Calculate Regression</button>
         </div>
         
         <div class="spreadsheet">
+            <div class="spreadsheet-controls">
+                <button id="addRow">+ Row</button>
+                <button id="addColumn">+ Column</button>
+            </div>
             <div id="dataGrid"></div>
-            <button id="calculateRegression">Calculate Regression</button>
         </div>
     </div>
     <script src="script.js"></script>

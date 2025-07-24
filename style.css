@@ -10,8 +10,15 @@ h1 {
     margin-bottom: 30px;
 }
 
-.visualization {
+.visualization-container {
+    display: flex;
+    gap: 20px;
+    align-items: center;
     margin-bottom: 30px;
+}
+
+.visualization {
+    flex: 1;
     height: 400px;
     border: 1px solid #ddd;
     padding: 20px;
@@ -21,6 +28,24 @@ h1 {
 
 .spreadsheet {
     margin-top: 20px;
+}
+
+.spreadsheet-controls {
+    margin-bottom: 10px;
+}
+
+.spreadsheet-controls button {
+    padding: 5px 15px;
+    margin-right: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.spreadsheet-controls button:hover {
+    background-color: #45a049;
 }
 
 #dataGrid {
