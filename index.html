@@ -23,8 +23,14 @@
         
         <div class="spreadsheet">
             <div class="spreadsheet-controls">
-                <button id="addRow">+ Row</button>
-                <button id="addColumn">+ Column</button>
+                <div class="control-group">
+                    <button id="addRow">+ Row</button>
+                    <button id="removeRow">- Row</button>
+                </div>
+                <div class="control-group">
+                    <button id="addColumn">+ Column</button>
+                    <button id="removeColumn">- Column</button>
+                </div>
             </div>
             <div id="dataGrid"></div>
         </div>

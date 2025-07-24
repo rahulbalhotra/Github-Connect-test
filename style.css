@@ -32,20 +32,37 @@ h1 {
 
 .spreadsheet-controls {
     margin-bottom: 10px;
+    display: flex;
+    gap: 20px;
+}
+
+.control-group {
+    display: flex;
+    gap: 10px;
 }
 
 .spreadsheet-controls button {
     padding: 5px 15px;
-    margin-right: 10px;
-    background-color: #4CAF50;
-    color: white;
     border: none;
     border-radius: 3px;
     cursor: pointer;
+    color: white;
 }
 
-.spreadsheet-controls button:hover {
+.spreadsheet-controls button[id^="add"] {
+    background-color: #4CAF50;
+}
+
+.spreadsheet-controls button[id^="add"]:hover {
     background-color: #45a049;
+}
+
+.spreadsheet-controls button[id^="remove"] {
+    background-color: #f44336;
+}
+
+.spreadsheet-controls button[id^="remove"]:hover {
+    background-color: #da190b;
 }
 
 #dataGrid {

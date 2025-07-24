@@ -28,6 +28,15 @@ document.addEventListener('DOMContentLoaded', function() {
         hot.render(); // Force re-render
     });
 
+    // Remove row button functionality
+    document.getElementById('removeRow').addEventListener('click', function() {
+        const currentData = hot.getData();
+        if (currentData.length > 2) { // Keep at least header row and one data row
+            hot.alter('remove_row', currentData.length - 1);
+            hot.render();
+        }
+    });
+
     // Add column button functionality
     document.getElementById('addColumn').addEventListener('click', function() {
         const currentData = hot.getData();
@@ -41,6 +50,22 @@ document.addEventListener('DOMContentLoaded', function() {
         hot.updateSettings({
             colHeaders: headers
         });
+    });
+
+    // Remove column button functionality
+    document.getElementById('removeColumn').addEventListener('click', function() {
+        const currentData = hot.getData();
+        if (currentData[0].length > 2) { // Keep at least X and Y columns
+            hot.alter('remove_col', currentData[0].length - 1);
+            hot.render();
+            
+            // Update column headers
+            const headers = Array.from({length: hot.countCols()}, (_, i) => 
+                String.fromCharCode(65 + i));
+            hot.updateSettings({
+                colHeaders: headers
+            });
+        }
     });
 
     // Initialize the chart
