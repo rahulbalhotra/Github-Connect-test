@@ -62,12 +62,12 @@ class TradingStrategy:
         ax1.plot(self.data.index, self.data['SMA_Long'], label='Long MA')
         
         # Plot buy/sell signals
-        buy_signals = self.signals[self.signals['Signal'] == 1].index
-        sell_signals = self.signals[self.signals['Signal'] == -1].index
+        buy_signals = self.signals[self.signals['Signal'] == 1]
+        sell_signals = self.signals[self.signals['Signal'] == -1]
         
-        ax1.plot(buy_signals, self.data['Close'][buy_signals], '^', 
+        ax1.plot(buy_signals.index, self.data.loc[buy_signals.index, 'Close'], '^', 
                 markersize=10, color='g', label='Buy Signal')
-        ax1.plot(sell_signals, self.data['Close'][sell_signals], 'v', 
+        ax1.plot(sell_signals.index, self.data.loc[sell_signals.index, 'Close'], 'v', 
                 markersize=10, color='r', label='Sell Signal')
         
         ax1.set_title(f'Moving Average Strategy: {self.symbol}')
